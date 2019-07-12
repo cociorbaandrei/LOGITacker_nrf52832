@@ -600,7 +600,7 @@ static void update_rf_payload_format_esb_promiscuous(uint32_t payload_length)
                        //(1 << 22) | //S0INCL???
                      //  (0 << RADIO_PCNF0_CRCINC_Pos) ;
 
-
+  
     NRF_RADIO->PCNF1 = (RADIO_PCNF1_WHITEEN_Disabled    << RADIO_PCNF1_WHITEEN_Pos) |
                        (RADIO_PCNF1_ENDIAN_Big          << RADIO_PCNF1_ENDIAN_Pos)  |
                        ((1)                             << RADIO_PCNF1_BALEN_Pos)   |
@@ -608,6 +608,7 @@ static void update_rf_payload_format_esb_promiscuous(uint32_t payload_length)
                        (60                              << RADIO_PCNF1_MAXLEN_Pos);
 //                       (payload_length                  << RADIO_PCNF1_STATLEN_Pos) |
 //                       (payload_length                  << RADIO_PCNF1_MAXLEN_Pos);
+    NRF_RADIO->CRCCNF = 0;
 
 }
 
