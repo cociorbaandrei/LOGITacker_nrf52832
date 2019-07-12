@@ -2,7 +2,7 @@
 #include "nrf_log_ctrl.h"
 #include "stdlib.h"
 #include "logitacker_keyboard_map.h"
-#include "utf.h"
+//#include "utf.h"
 
 #define NRF_LOG_MODULE_NAME LOGITACKER_KEYBOARD_MAP
 #include "nrf_log.h"
@@ -143,8 +143,8 @@ uint32_t logitacker_keyboard_map_combo_str_to_hid_report(char const *in_str,
 
             //convert char to wchar
             char tokenStr[2] = {token[0], 0x00};
-            uint32_t c_utf; //stores decoded unicode codepoint (wchar) of next UTF-8 rune
-            utf8DecodeRune(tokenStr, 0, &c_utf);
+            uint32_t c_utf = 0; //stores decoded unicode codepoint (wchar) of next UTF-8 rune
+            //utf8DecodeRune(tokenStr, 0, &c_utf);
 
             // retrieve HID reports for current wchar (language agnostic)
             hid_keyboard_report_t *p_hid_report_sequence = NULL;
@@ -282,7 +282,7 @@ uint32_t logitacker_keyboard_map_u8_str_to_hid_reports(logitacker_keyboard_map_u
     uint32_t c_utf; //stores decoded unicode codepoint (wchar) of next UTF-8 rune
 
     //read UTF-8 rune and advance p_pos to next one
-    p_ctx->p_pos = utf8DecodeRune(p_ctx->p_pos, 0, &c_utf);
+   // p_ctx->p_pos = utf8DecodeRune(p_ctx->p_pos, 0, &c_utf);
 
     //ToDo: check if c_utf contains an error value
 

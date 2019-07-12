@@ -193,7 +193,7 @@ NRF_CLI_DEF(m_cli_cdc_acm,
 #if CLI_OVER_UART
 NRF_CLI_UART_DEF(m_cli_uart_transport, 0, 64, 16);
 NRF_CLI_DEF(m_cli_uart,
-            "uart_cli:~$ ",
+            g_logitacker_cli_name,
             &m_cli_uart_transport.transport,
             '\r',
             CLI_EXAMPLE_LOG_QUEUE_SIZE);
@@ -201,7 +201,7 @@ NRF_CLI_DEF(m_cli_uart,
 
 NRF_CLI_RTT_DEF(m_cli_rtt_transport);
 NRF_CLI_DEF(m_cli_rtt,
-            "rtt_cli:~$ ",
+            g_logitacker_cli_name,
             &m_cli_rtt_transport.transport,
             '\n',
             CLI_EXAMPLE_LOG_QUEUE_SIZE);
@@ -210,10 +210,10 @@ static void timer_handle(void * p_context)
 {
     UNUSED_PARAMETER(p_context);
 
-    if (m_counter_active)
+    if (true)
     {
-        m_counter++;
-        NRF_LOG_RAW_INFO("counter = %d\n", m_counter);
+        //m_counter++;
+        //NRF_LOG_RAW_INFO("counter = %d\n", m_counter);
     }
 }
 
@@ -344,6 +344,7 @@ uint32_t cyccnt_get(void)
 int main(void)
 {
     ret_code_t ret;
+    APP_SCHED_INIT(SCHED_MAX_EVENT_DATA_SIZE, SCHED_QUEUE_SIZE);
 
     if (USE_CYCCNT_TIMESTAMP_FOR_LOG)
     {
@@ -363,12 +364,20 @@ int main(void)
 
     ret = app_timer_init();
     APP_ERROR_CHECK(ret);
-
+/*
     ret = app_timer_create(&m_timer_0, APP_TIMER_MODE_REPEATED, timer_handle);
     APP_ERROR_CHECK(ret);
 
     ret = app_timer_start(m_timer_0, APP_TIMER_TICKS(1000), NULL);
     APP_ERROR_CHECK(ret);
+*/
+    bsp_board_led_invert(LED_G);
+    ret = nrf_crypto_init();
+    APP_ERROR_CHECK(ret);
+
+    bsp_board_led_invert(LED_G);
+
+    logitacker_init();
 
     cli_init();
 
@@ -376,7 +385,6 @@ int main(void)
 
     ret = fds_init();
     APP_ERROR_CHECK(ret);
-
 
     UNUSED_RETURN_VALUE(nrf_log_config_load());
 
@@ -386,11 +394,15 @@ int main(void)
 
     stack_guard_init();
 
+
+
     NRF_LOG_RAW_INFO("Command Line Interface example started.\n");
     NRF_LOG_RAW_INFO("Please press the Tab key to see all available commands.\n");
 
     while (true)
     {
+        app_sched_execute(); 
+        cli_process();
         UNUSED_RETURN_VALUE(NRF_LOG_PROCESS());
 #if CLI_OVER_USB_CDC_ACM && APP_USBD_CONFIG_EVENT_QUEUE_ENABLE
         while (app_usbd_event_queue_process())
@@ -398,7 +410,7 @@ int main(void)
             /* Nothing to do */
         }
 #endif
-        cli_process();
+        
     }
 }
 

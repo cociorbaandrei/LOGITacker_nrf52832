@@ -19,7 +19,7 @@
 #include "logitacker_processor_inject.h"
 //#include "logitacker_usb.h"
 #include "logitacker_options.h"
-#include "utf.h"
+//#include "utf.h"
 #include "logitacker_flash.h"
 #include "logitacker_processor_discover.h"
 #include "logitacker_processor_pair_sniff.h"
@@ -40,6 +40,7 @@ typedef struct {
     logitacker_mode_t   mainstate;
 } logitacker_state_t;
 
+char g_logitacker_cli_name[32];
 
 logitacker_state_t m_state_local;
 

@@ -9,7 +9,7 @@
 
 
 #define LOGITACKER_SCRIPT_ENGINE_MAX_TASK_DATA_MAX_SIZE 256 // maximum size of a single script task
-#define LOGITACKER_SCRIPT_ENGINE_RINGBUF_BYTES (1<<15) // overall size of ringbuffer for storable script tasks (has to be power of 2)
+#define LOGITACKER_SCRIPT_ENGINE_RINGBUF_BYTES (1<<6) // overall size of ringbuffer for storable script tasks (has to be power of 2)
 
 #define LOGITACKER_SCRIPT_ENGINE_SCRIPT_NAME_MAX_LEN 32
 

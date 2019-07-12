@@ -1,5 +1,5 @@
 #include "logitacker_tx_payload_provider_press_to_keys.h"
-#include <utf.h>
+//#include <utf.h>
 #include "logitacker_keyboard_map.h"
 
 #define NRF_LOG_MODULE_NAME TX_PAY_PROVIDER_PRESS_TO_KEYS
