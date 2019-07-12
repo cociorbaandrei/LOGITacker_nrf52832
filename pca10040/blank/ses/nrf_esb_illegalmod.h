@@ -286,7 +286,7 @@ typedef enum {
 
 /**@brief Enhanced ShockBurst radio transmission power modes. */
 typedef enum {
-    NRF_ESB_TX_POWER_8DBM     = RADIO_TXPOWER_TXPOWER_Pos8dBm,  /**< 4 dBm radio transmit power.   */
+    NRF_ESB_TX_POWER_8DBM     = RADIO_TXPOWER_TXPOWER_Pos4dBm,  /**< 4 dBm radio transmit power.   */
     NRF_ESB_TX_POWER_4DBM     = RADIO_TXPOWER_TXPOWER_Pos4dBm,  /**< 4 dBm radio transmit power.   */
 #if defined(NRF52)
     NRF_ESB_TX_POWER_3DBM     = RADIO_TXPOWER_TXPOWER_Pos3dBm,  /**< 3 dBm radio transmit power.   */

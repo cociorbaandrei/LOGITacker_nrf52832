@@ -42,6 +42,8 @@
 #include <stddef.h>
 
 #include "nrf.h"
+#include "nrf_esb_illegalmod.h"
+#include "nrf_esb_illegalmod_error_codes.h"
 #include "nrf_drv_clock.h"
 #include "nrf_gpio.h"
 #include "nrf_delay.h"
@@ -90,6 +92,26 @@
 #if CLI_OVER_UART
 #include "nrf_cli_uart.h"
 #endif
+
+#include "app_scheduler.h"
+#include "fds.h"
+#include "logitacker_unifying.h"
+
+#include "logitacker_bsp.h"
+#include "logitacker_radio.h"
+#include "logitacker.h"
+
+#include "nrf_crypto.h"
+
+
+#define CHANNEL_HOP_RESTART_DELAY 1300
+
+// Scheduler settings
+#define SCHED_MAX_EVENT_DATA_SIZE   BYTES_PER_WORD*BYTES_TO_WORDS(MAX(NRF_ESB_CHECK_PROMISCUOUS_SCHED_EVENT_DATA_SIZE,MAX(APP_TIMER_SCHED_EVENT_DATA_SIZE,MAX(sizeof(nrf_esb_payload_t),sizeof(nrf_esb_evt_t)))))
+
+
+#define SCHED_QUEUE_SIZE            64
+
 
 /* If enabled then CYCCNT (high resolution) timestamp is used for the logger. */
 #define USE_CYCCNT_TIMESTAMP_FOR_LOG 0

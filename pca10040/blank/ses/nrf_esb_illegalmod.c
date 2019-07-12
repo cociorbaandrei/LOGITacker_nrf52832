@@ -594,11 +594,11 @@ static void update_rf_payload_format_esb_promiscuous(uint32_t payload_length)
     NRF_RADIO->PCNF0 = (0 << RADIO_PCNF0_S0LEN_Pos) |
                        (0 << RADIO_PCNF0_LFLEN_Pos) |
                        (0 << RADIO_PCNF0_S1LEN_Pos) |
-                       (0 << RADIO_PCNF0_CILEN_Pos) |
+                       //(0 << RADIO_PCNF0_CILEN_Pos) |
                        (0 << RADIO_PCNF0_PLEN_Pos) | //preamble 8 bit
-                       (0 << RADIO_PCNF0_S1INCL_Pos) | //without this, one payload byte would be missing, still the byte consumed by s0 isn't there
+                       (0 << RADIO_PCNF0_S1INCL_Pos); //without this, one payload byte would be missing, still the byte consumed by s0 isn't there
                        //(1 << 22) | //S0INCL???
-                       (0 << RADIO_PCNF0_CRCINC_Pos) ;
+                     //  (0 << RADIO_PCNF0_CRCINC_Pos) ;
 
 
     NRF_RADIO->PCNF1 = (RADIO_PCNF1_WHITEEN_Disabled    << RADIO_PCNF1_WHITEEN_Pos) |

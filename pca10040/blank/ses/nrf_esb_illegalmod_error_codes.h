@@ -1,11 +1,4 @@
-/**
- * This is a modified version of the nrf_esb library by Marcus Mengs.
- * The original library is provided with the nRF5 SDK by Nordic Semiconductor ASA.
- * The copyright notice from the unmodified library could be found below.
- *
- * Many changes have been made to the library in order to support pseudo-promiscuous
- * mode for ESB, amongst these changes:
- *
+/*
  * - Pseudo promiscuous mode has a "post processing step" (checks valid ESB frames
  * in received noise). As this adds a huge amount of computation overhead, it was
  * off-loaded to app_scheduler. Thus the library depends on app_scheduler.
