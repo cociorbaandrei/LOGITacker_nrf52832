@@ -203,6 +203,10 @@
       <file file_name="../../../../../../../modules/nrfx/mdk/ses_startup_nrf_common.s" />
       <file file_name="../../../../../../../modules/nrfx/mdk/system_nrf52.c" />
     </folder>
+    <configuration
+      Name="Release"
+      arm_linker_heap_size="18192"
+      arm_linker_stack_size="8192" />
   </project>
   <configuration
     Name="Release"

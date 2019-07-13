@@ -85,7 +85,7 @@
 // <4=> SDK Memory Manager (nrf_malloc) 
 
 #ifndef NRF_CRYPTO_ALLOCATOR
-#define NRF_CRYPTO_ALLOCATOR 0
+#define NRF_CRYPTO_ALLOCATOR 3
 #endif
 
 #ifndef NRF_CRYPTO_BACKEND_MBEDTLS_ENABLED
@@ -119,7 +119,7 @@
 
 
 #ifndef MEMORY_MANAGER_SMALL_BLOCK_COUNT
-#define MEMORY_MANAGER_SMALL_BLOCK_COUNT 1
+#define MEMORY_MANAGER_SMALL_BLOCK_COUNT 64
 #endif
 
 // <o> MEMORY_MANAGER_SMALL_BLOCK_SIZE -  Size of each memory blocks identified as 'small' block. 

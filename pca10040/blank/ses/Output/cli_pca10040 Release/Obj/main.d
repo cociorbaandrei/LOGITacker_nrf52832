@@ -114,7 +114,6 @@ Output/cli_pca10040\ Release/Obj/main.o: \
  ../../../../../../../components/libraries/crypto/nrf_crypto_types.h \
  ../../../../../../../components/libraries/crypto/nrf_crypto_mem.h \
  ../../../../../../../components/libraries/util/sdk_alloca.h \
- ../../../../../../../components/libraries/mem_manager/mem_manager.h \
  ../../../../../../../components/libraries/crypto/nrf_crypto_ecc.h \
  ../../../../../../../components/libraries/crypto/nrf_crypto_error.h \
  ../../../../../../../components/libraries/crypto/nrf_crypto_ecc_shared.h \

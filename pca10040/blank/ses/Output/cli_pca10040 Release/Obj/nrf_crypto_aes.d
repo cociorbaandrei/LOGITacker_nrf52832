@@ -47,7 +47,6 @@ Output/cli_pca10040\ Release/Obj/nrf_crypto_aes.o: \
  ../../../../../../../components/libraries/crypto/nrf_crypto_aes_shared.h \
  /home/ez3kiel/Desktop/enty_nrf52/nRF5_SDK_15.3.0_59ac345/components/libraries/crypto/nrf_crypto_mem.h \
  ../../../../../../../components/libraries/util/sdk_alloca.h \
- ../../../../../../../components/libraries/mem_manager/mem_manager.h \
  /home/ez3kiel/Desktop/enty_nrf52/nRF5_SDK_15.3.0_59ac345/components/libraries/crypto/nrf_crypto_error.h \
  /home/ez3kiel/Desktop/enty_nrf52/nRF5_SDK_15.3.0_59ac345/components/libraries/crypto/nrf_crypto_shared.h \
  ../../../../../../../components/libraries/util/sdk_macros.h

@@ -41,7 +41,7 @@ Output/cli_pca10040\ Release/Obj/nrf_crypto_rng.o: \
  ../../../../../../../components/libraries/log/nrf_log_types.h \
  /home/ez3kiel/Desktop/enty_nrf52/nRF5_SDK_15.3.0_59ac345/components/libraries/crypto/nrf_crypto_mem.h \
  ../../../../../../../components/libraries/util/sdk_alloca.h \
- ../../../../../../../components/libraries/mem_manager/mem_manager.h \
+ /usr/share/segger_embedded_studio_for_arm_4.18/include/stdlib.h \
  /home/ez3kiel/Desktop/enty_nrf52/nRF5_SDK_15.3.0_59ac345/components/libraries/crypto/nrf_crypto_rng.h \
  /home/ez3kiel/Desktop/enty_nrf52/nRF5_SDK_15.3.0_59ac345/components/libraries/crypto/nrf_crypto_error.h \
  /home/ez3kiel/Desktop/enty_nrf52/nRF5_SDK_15.3.0_59ac345/components/libraries/crypto/nrf_crypto_rng_shared.h \

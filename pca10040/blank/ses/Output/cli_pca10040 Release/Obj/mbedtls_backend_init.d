@@ -34,9 +34,8 @@ Output/cli_pca10040\ Release/Obj/mbedtls_backend_init.o: \
  ../../../../../../../components/libraries/crypto/nrf_crypto_types.h \
  ../../../../../../../components/libraries/crypto/nrf_crypto_mem.h \
  ../../../../../../../components/libraries/util/sdk_alloca.h \
- ../../../../../../../components/libraries/mem_manager/mem_manager.h \
+ /usr/share/segger_embedded_studio_for_arm_4.18/include/stdlib.h \
  ../../../../../../../external/mbedtls/include/mbedtls/platform.h \
  ../../../../../../../external/nrf_tls/mbedtls/nrf_crypto/config/nrf_crypto_mbedtls_config.h \
  ../../../../../../../external/mbedtls/include/mbedtls/check_config.h \
- /usr/share/segger_embedded_studio_for_arm_4.18/include/limits.h \
- /usr/share/segger_embedded_studio_for_arm_4.18/include/stdlib.h
+ /usr/share/segger_embedded_studio_for_arm_4.18/include/limits.h

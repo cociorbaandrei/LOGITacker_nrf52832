@@ -1841,7 +1841,7 @@
 // <8=> White 
 
 #ifndef NRF_LOG_COLOR_DEFAULT
-#define NRF_LOG_COLOR_DEFAULT 0
+#define NRF_LOG_COLOR_DEFAULT 3
 #endif
 
 // <o> NRF_LOG_ERROR_COLOR  - ANSI escape code prefix.
