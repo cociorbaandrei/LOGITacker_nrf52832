@@ -68,6 +68,7 @@ bool logitacker_pairing_derive_key_material(logitacker_pairing_info_t * pi) {
     return NRF_SUCCESS;
 }
 
+
 bool logitacker_pairing_derive_key(logitacker_pairing_info_t * pi) {
     pi->device_key[2] = pi->device_raw_key_material[0];
     pi->device_key[1] = pi->device_raw_key_material[1] ^ 0xFF;
